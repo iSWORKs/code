@@ -1,0 +1,657 @@
+@charset "UTF-8";
+/*-----------------------------------------------------
+
+	layout.css
+	共通CSS 
+
+------------------------------------------------------*/
+#pagetop a {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+.btn {
+  box-shadow: rgba(0, 0, 0, 0.18039) 0px 1px 3px 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18039) 0px 1px 3px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.18039) 0px 1px 3px 0px;
+}
+
+@media all and (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    background-size: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+}
+body {
+  min-width: 960px;
+  background: #f4f4f4;
+  font-family: YuGothic, "游ゴシック", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN", Meiryo, メイリオ, sans-serif;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  body {
+    min-width: 768px;
+  }
+}
+@media all and (max-width: 767px) {
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+  }
+}
+
+.inner {
+  width: 960px;
+  margin: 0 auto;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  .inner {
+    width: 748px;
+    padding: 0 10px;
+  }
+}
+@media all and (max-width: 767px) {
+  .inner {
+    width: 100%;
+    padding: 4%;
+  }
+}
+.inner:after {
+  content: ".";
+  height: 0;
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+
+#pagetop {
+  padding: 1em 0;
+  background: #9dbcef;
+  overflow: hidden;
+}
+#pagetop a {
+  display: block;
+  float: right;
+  padding: .5em 1.2em .5em .5em;
+  background: url(../images/arrow_top.png) no-repeat right center;
+  background-size: .7em;
+  font-weight: bold;
+  font-size: .7em;
+  font-family: 'Noto Sans Japanese', sans-serif;
+  color: #141414;
+  text-decoration: none;
+}
+#pagetop a:hover {
+  background: url(../images/arrow_top.png) no-repeat right 0.6em;
+  background-size: .7em;
+}
+
+/* button */
+.btn {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+  text-align: center;
+  color: #174aa8;
+  font-weight: bold;
+  font-family: 'Noto Sans Japanese', sans-serif;
+  text-decoration: none;
+}
+.btn:hover, .btn.active {
+  background: #174aa8;
+  color: #fff;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  .btn {
+    padding: 1em;
+  }
+}
+@media all and (max-width: 767px) {
+  .btn {
+    padding: 1em .5em;
+    font-size: .9em;
+  }
+}
+
+.btn_details {
+  width: 9em;
+  padding: 1em 1em 1em 2em;
+  font-size: .8em;
+}
+.btn_details:after {
+  content: '';
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 0 0 .25em;
+  background: url(../images/arrow_blue.png) no-repeat;
+  background-size: 100%;
+}
+.btn_details:hover:after {
+  background: url(../images/arrow_white.png) no-repeat;
+  background-size: 100%;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  .btn_details {
+    font-size: .7em;
+  }
+  .btn_details:after {
+    display: none;
+  }
+}
+@media all and (max-width: 767px) {
+  .btn_details {
+    width: 11em;
+    padding: 1em;
+    font-size: .7em;
+  }
+  .btn_details:after {
+    display: none;
+  }
+}
+
+.btn_consultation {
+  width: 24em;
+  margin-top: 2em;
+  padding: 1em 2em 1em 1em;
+  font-size: 1.4em;
+}
+.btn_consultation:before {
+  content: '';
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 24px;
+  height: 26px;
+  margin: 0 .25em 0 0;
+  background: url(../images/ico_pen_blue.png) no-repeat center;
+  background-size: 100%;
+}
+.btn_consultation:hover:before {
+  background: url(../images/ico_pen_white.png) no-repeat center;
+  background-size: 100%;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  .btn_consultation {
+    font-size: 1.2em;
+  }
+}
+@media all and (max-width: 767px) {
+  .btn_consultation {
+    padding: 2em 1em;
+    font-size: .7em;
+  }
+  .btn_consultation:before {
+    display: none;
+  }
+}
+
+.btn_gallery {
+  width: 24em;
+  margin-top: 2em;
+  padding: 1em 2em 1em 1em;
+  font-size: 1.4em;
+}
+.btn_gallery:before {
+  content: '';
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 24px;
+  height: 26px;
+  margin: 0 .25em 0 0;
+  background: url(../images/ico_fin_blue.png) no-repeat center;
+  background-size: 100%;
+}
+.btn_gallery:hover:before {
+  background: url(../images/ico_fin_white.png) no-repeat center;
+  background-size: 100%;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  .btn_gallery {
+    font-size: 1.2em;
+  }
+}
+@media all and (max-width: 767px) {
+  .btn_gallery {
+    padding: 2em 1em;
+    font-size: .7em;
+  }
+  .btn_gallery:before {
+    display: none;
+  }
+}
+
+.btn_inquery {
+  width: 24em;
+  margin-top: 2em;
+  padding: 1em 2em 1em 1em;
+  font-size: 1.4em;
+}
+.btn_inquery:before {
+  content: '';
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 24px;
+  height: 26px;
+  margin: 0 .25em 0 0;
+  background: url(../images/ico_mail_blue.png) no-repeat center;
+  background-size: 100%;
+}
+.btn_inquery:hover:before {
+  background: url(../images/ico_mail_white.png) no-repeat center;
+  background-size: 100%;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  .btn_inquery {
+    font-size: 1.2em;
+  }
+}
+@media all and (max-width: 767px) {
+  .btn_inquery {
+    padding: 2em 1em;
+    font-size: .7em;
+  }
+  .btn_inquery:before {
+    display: none;
+  }
+}
+
+/*-----------------------------------------------------
+	header　
+-----------------------------------------------------*/
+header {
+  position: relative;
+  height: 92px;
+  border-bottom: solid 5px #174aa8;
+  background: #fff;
+}
+header #header_wrap {
+  position: relative;
+  z-index: 3;
+  margin: 0 auto;
+  padding: 20px 0 0 0;
+  overflow: hidden;
+}
+header #header_wrap h1 {
+  float: left;
+}
+header #header_wrap .contact {
+  overflow: hidden;
+  float: right;
+  width: 420px;
+}
+header #header_wrap .contact .infocounter {
+  margin: 0 0 .5em 0;
+  padding: .4em 0 .2em 0;
+  text-align: center;
+  background: #d04848;
+  font-size: .8em;
+  font-weight: bold;
+  color: #fff;
+}
+header #header_wrap .contact .tel {
+  font-size: 1.8em;
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  position: relative;
+  vertical-align: text-top;
+  height: 32px;
+  padding: 0 0 0 32px;
+  font-weight: bold;
+  font-family: 'Noto Sans Japanese', sans-serif;
+  line-height: 32px;
+  color: #174aa8;
+}
+header #header_wrap .contact .tel:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 100%;
+}
+header #header_wrap .contact .tel a {
+  text-decoration: none;
+}
+header #header_wrap .contact .tel:before {
+  background: url(../images/ico_tel.png) no-repeat center;
+  background-size: 88%;
+}
+header #header_wrap .contact .mail {
+  float: right;
+  font-size: 1em;
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  position: relative;
+  vertical-align: text-top;
+  height: 32px;
+  padding: 0 0 0 32px;
+  font-weight: bold;
+  font-family: 'Noto Sans Japanese', sans-serif;
+  line-height: 32px;
+  color: #174aa8;
+}
+header #header_wrap .contact .mail:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 100%;
+}
+header #header_wrap .contact .mail a {
+  text-decoration: none;
+}
+header #header_wrap .contact .mail:before {
+  background: url(../images/ico_mail.png) no-repeat center;
+  background-size: 88%;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  header #header_wrap h1 {
+    top: 15px;
+    width: 280px;
+    margin-left: 1.5em;
+  }
+  header #header_wrap h1 img {
+    width: 100%;
+    height: auto;
+  }
+  header #header_wrap .contact {
+    width: 340px;
+    margin: 0 1.5em 0 0;
+    font-size: .7em;
+  }
+  header #header_wrap .contact .mail, header #header_wrap .contact .tel {
+    height: 24px;
+    padding: 0 0 0 24px;
+    line-height: 24px;
+  }
+  header #header_wrap .contact .mail:before, header #header_wrap .contact .tel:before {
+    width: 24px;
+  }
+}
+@media all and (max-width: 767px) {
+  header {
+    height: auto;
+    padding: 0 0 4% 0;
+  }
+  header #header_wrap h1 {
+    float: none;
+    top: 15px;
+    width: 280px;
+    margin: 0 auto;
+  }
+  header #header_wrap h1 img {
+    width: 100%;
+    height: auto;
+  }
+  header #header_wrap .contact {
+    float: none;
+    width: 300px;
+    margin: 2em auto 0 auto;
+    font-size: .7em;
+  }
+  header #header_wrap .contact .mail, header #header_wrap .contact .tel {
+    height: 24px;
+    padding: 0 0 0 24px;
+    line-height: 24px;
+  }
+  header #header_wrap .contact .mail:before, header #header_wrap .contact .tel:before {
+    width: 24px;
+  }
+}
+
+/*-----------------------------------------------------
+	footer　
+-----------------------------------------------------*/
+footer {
+  position: relative;
+  padding: 45px 0 0 0;
+  background: #174aa8;
+  color: #fff;
+}
+footer h1 {
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 2em 0 0;
+}
+footer #address {
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 0 0 2em;
+  border-left: solid 1px #fff;
+  font-size: .9em;
+}
+footer #address dt, footer #address dd {
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  padding: .25em;
+}
+footer #address .tel, footer #address .mail {
+  font-size: 1.2em;
+}
+footer #address .tel:before, footer #address .mail:before {
+  content: '';
+  padding: 0 .25em 0 0;
+  font-size: .8em;
+}
+footer #address .tel:before {
+  content: 'TEL:';
+}
+footer #address .mail:before {
+  content: 'e-mail:';
+}
+footer #address .domicile {
+  display: block;
+}
+footer #address .domicile br {
+  display: none;
+}
+footer #f_nav {
+  margin: 25px 0 0 0;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Noto Sans Japanese', sans-serif;
+}
+footer #f_nav ul li {
+  display: inline;
+  zoom: 1;
+  display: inline-block;
+  position: relative;
+  margin: 0 40px;
+  padding: 0 0 0 1em;
+}
+footer #f_nav ul li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin-top: -4px;
+  border-left: solid 6px #fff;
+  border-top: solid 4px transparent;
+  border-bottom: solid 4px transparent;
+}
+footer #f_nav ul li a {
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+footer small {
+  display: block;
+  margin: 25px 0 0 0;
+  padding: 1em 0;
+  text-align: center;
+  background: #0e2c65;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  footer h1 {
+    display: block;
+    padding: 0 0 2em 0;
+  }
+  footer #address {
+    display: block;
+    padding: 0 0 0 1em;
+  }
+  footer #f_nav {
+    margin: 50px 0 0 0;
+    text-align: center;
+  }
+  footer #f_nav ul li {
+    margin: 0 12px;
+    padding: 0 0 0 1em;
+  }
+  footer #f_nav ul li a {
+    font-size: 1.2em;
+  }
+  footer small {
+    margin: 50px 0 0 0;
+  }
+}
+@media all and (max-width: 767px) {
+  footer h1 {
+    display: block;
+    width: 60%;
+    padding: 0 0 1em 0;
+  }
+  footer #address {
+    display: block;
+    padding: 1em 0 0 0;
+    border-top: solid 1px #fff;
+    border-left: none;
+    font-size: .9em;
+  }
+  footer #address dd {
+    display: block;
+    padding: .25em;
+  }
+  footer #address dt {
+    display: none;
+  }
+  footer #address .domicile {
+    line-height: 1.7;
+  }
+  footer #address .domicile br {
+    display: block;
+  }
+  footer #f_nav {
+    margin: 2em 0 0 0;
+  }
+  footer #f_nav ul li {
+    display: block;
+    margin: 0;
+    padding: .5em 0 .5em 1em;
+    text-align: left;
+  }
+  footer small {
+    font-size: .7em;
+  }
+}
+
+/*-----------------------------------------------------
+	content　
+-----------------------------------------------------*/
+#content > section {
+  padding: 45px 10px;
+}
+#content > section.bg {
+  background: #9dbcef url(../images/pattern.png) center;
+}
+#content > section h1 {
+  position: relative;
+  margin: 0 0 1.5em 0;
+  padding: 0 0 0 1.4em;
+  font-size: 1.2em;
+  font-weight: bold;
+  letter-spacing: .2em;
+  color: #141414;
+}
+#content > section h1:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1em;
+  height: 1em;
+  margin: -.5em 0 0 0;
+  background: url(../images/ico_sec_tit.png) no-repeat;
+  background-size: 100%;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  #content > section {
+    padding: 35px 0;
+  }
+}
+@media all and (max-width: 767px) {
+  #content > section {
+    padding: 4% 0;
+  }
+  #content > section h1 {
+    font-size: 1em;
+  }
+}
+#content .baloon {
+  position: relative;
+  z-index: 9;
+  margin: 0 auto 30px auto;
+  padding: 1em;
+  background: #ddd;
+  text-align: center;
+}
+#content .baloon:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 0;
+  height: 0;
+  margin: 0 0 0 -10px;
+  border-top: solid 15px #ddd;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+}
+@media all and (max-width: 959px) and (min-width: 768px) {
+  #content .baloon {
+    font-size: .9em;
+  }
+}
+@media all and (max-width: 767px) {
+  #content .baloon {
+    font-size: .8em;
+  }
+}
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,599 @@
+@charset "utf-8";
+/*-----------------------------------------------------
+
+	layout.css
+	共通CSS 
+
+------------------------------------------------------*/
+
+@import "_var.scss";
+@import "_extend.scss";
+
+
+@media all and (max-width: $tablet - 1) {
+	*{
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		background-size: 100%;
+	}
+	img{
+		width: 100%;
+		height: auto;
+		vertical-align: middle;
+	}
+}
+body{
+	min-width: $pc;
+	background: #f4f4f4;
+	font-family: YuGothic , '游ゴシック' , 'Hiragino Kaku Gothic ProN' , 'ヒラギノ角ゴ ProN' , Meiryo , メイリオ , sans-serif ;
+	
+	@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+		min-width: 768px;
+	} // tablet
+
+	@media all and (max-width: $phone - 1){
+		min-width: 320px;
+		overflow-x: hidden;
+	} // phone
+}
+
+.inner{
+	width: $pc;
+	margin: 0 auto;
+	
+	@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+		width: $tablet - 20px;
+		padding: 0 10px;
+	} // tablet
+	@media all and (max-width: $phone - 1){
+		width: 100%;
+		padding: 4%;
+	} // phone
+	
+	&:after{
+		content: ".";
+		height: 0;
+		clear: both;
+		display: block;
+		visibility: hidden;
+	}
+}
+
+#pagetop{
+	padding: 1em 0;
+	background: $sky;
+	overflow: hidden;
+	a{
+		display: block;
+		float: right;
+		padding: .5em 1.2em .5em .5em;
+		background: url(../images/arrow_top.png) no-repeat right center;
+		background-size: .7em;
+		font:{
+			weight: bold;
+			size: .7em;
+			family: 'Noto Sans Japanese', sans-serif;
+		}
+		color: #141414;
+		text-decoration: none;
+		@extend %transit2;
+		&:hover{
+			background: url(../images/arrow_top.png) no-repeat right .6em;
+			background-size: .7em;
+		}
+	}
+}
+
+
+/* button */
+
+.btn{
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	background: #fff;
+	text-align: center;
+	@extend %box_shadow;
+	color: $blue;
+	font:{
+		weight: bold;
+		family: 'Noto Sans Japanese', sans-serif;
+	}
+	text-decoration: none;
+	
+	&:hover,&.active{
+		background: $blue;
+		color: #fff;
+	}
+	@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+		padding: 1em;
+	} // tablet
+
+	@media all and (max-width: $phone - 1){
+		padding: 1em .5em;
+		font-size: .9em;
+	} // phone
+}
+
+.btn_details{
+	width: 9em;
+	padding: 1em 1em 1em 2em;
+	font-size: .8em;
+	&:after{
+		content: '';
+		display: inline;
+		zoom: 1;
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		margin: 0 0 0 .25em;
+		background: url(../images/arrow_blue.png) no-repeat;
+		background-size: 100%;
+	}
+	&:hover{
+		&:after{
+			background: url(../images/arrow_white.png) no-repeat;
+			background-size: 100%;
+		}
+	}
+
+	@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+		font-size: .7em;
+		&:after{
+			display: none;
+		}
+	} // tablet
+
+	@media all and (max-width: $phone - 1){
+		width: 11em;
+		padding: 1em;
+		font-size: .7em;
+		&:after{
+			display: none;
+		}
+	} // phone
+}
+
+@mixin largeBtn($shape){
+	width: 24em;
+	margin-top: 2em;
+	padding: 1em 2em 1em 1em;
+	font-size: 1.4em;
+	&:before{
+		content: '';
+		display: inline;
+		zoom: 1;
+		display: inline-block;
+		vertical-align: bottom;
+		width: 24px;
+		height: 26px;
+		margin: 0 .25em 0 0;
+		background: url(../images/ico_#{$shape}_blue.png) no-repeat center;
+		background-size: 100%;
+	}
+	&:hover{
+		&:before{
+			background: url(../images/ico_#{$shape}_white.png) no-repeat center;
+			background-size: 100%;
+		}
+	}
+	@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+		font-size: 1.2em;
+	} // tablet
+
+	@media all and (max-width: $phone - 1){
+		padding: 2em 1em;
+		font-size: .7em;
+		&:before{
+			display: none;
+		}
+	} // phone
+}
+.btn_consultation{
+	@include largeBtn(pen);
+}
+.btn_gallery{
+	@include largeBtn(fin);
+}
+.btn_inquery{
+	@include largeBtn(mail);
+}
+
+/*-----------------------------------------------------
+	header　
+-----------------------------------------------------*/
+header{
+	position: relative;
+	height: 92px;
+	border:{
+		bottom: solid 5px $blue;
+	}
+	background: #fff;
+	#header_wrap{
+		position: relative;
+		z-index: 3;
+		margin: 0 auto;
+		padding: 20px 0 0 0;
+		overflow: hidden;
+		h1{
+			float: left;
+		}
+		.contact{
+			overflow: hidden;
+			@mixin infoIcon {
+				display: inline;
+				zoom: 1;
+				display: inline-block;
+				position: relative;
+				vertical-align: text-top;
+				height: 32px;
+				padding: 0 0 0 32px;
+				font:{
+					weight: bold;
+					family: 'Noto Sans Japanese', sans-serif;
+				}
+				line-height: 32px;
+				color: $blue;
+				&:before{
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 32px;
+					height: 100%;
+				}
+				a{
+					text-decoration: none;
+				}
+			}
+			float: right;
+			width: 420px;
+			.infocounter{
+				margin: 0 0 .5em 0;
+				padding: .4em 0 .2em 0;
+				text-align: center;
+				background: $red;
+				font:{
+					size: .8em;
+					weight: bold;
+					}
+				color: #fff;
+			}
+			.tel{
+				font:{
+					size: 1.8em;
+				}
+				@include infoIcon;
+				&:before{
+					background: url(../images/ico_tel.png) no-repeat center;
+					background-size: 88%;
+				}
+			}
+			.mail{
+				float: right;
+				font:{
+					size: 1em;
+				}
+				@include infoIcon;
+				&:before{
+					background: url(../images/ico_mail.png) no-repeat center;
+					background-size: 88%;
+				}
+			}
+		}
+	}
+
+	@media all and (max-width: $pc - 1) and (min-width: $tablet){
+		#header_wrap{
+			h1{
+				top: 15px;
+				width: 280px;
+				margin-left: 1.5em;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.contact{
+				width: 340px;
+				margin: 0 1.5em 0 0;
+				font:{
+					size: .7em;
+				}
+				.mail,.tel{
+					height: 24px;
+					padding: 0 0 0 24px;
+					line-height: 24px;
+					&:before{
+						width: 24px;
+					}
+				}
+			}
+		}
+	} // tablet
+
+	@media all and (max-width: $phone - 1) {
+		height: auto;
+		padding: 0 0 4% 0;
+		#header_wrap{
+			h1{
+				float: none;
+				top: 15px;
+				width: 280px;
+				margin: 0 auto;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.contact{
+				float: none;
+				width: 300px;
+				margin: 2em auto 0 auto;
+				font:{
+					size: .7em;
+				}
+				.mail,.tel{
+					height: 24px;
+					padding: 0 0 0 24px;
+					line-height: 24px;
+					&:before{
+						width: 24px;
+					}
+				}
+			}
+		}
+	} // phone
+}
+
+
+/*-----------------------------------------------------
+	footer　
+-----------------------------------------------------*/
+footer {
+	position: relative;
+	padding: 45px 0 0 0;
+	background: $blue;
+	color: #fff;
+	h1{
+		display: inline;
+		zoom: 1;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 2em 0 0;
+	}
+	#address{
+		display: inline;
+		zoom: 1;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 0 0 2em;
+		border:{
+			left: solid 1px #fff;
+		}
+		font-size: .9em;
+		dt,dd{
+			display: inline;
+			zoom: 1;
+			display: inline-block;
+			padding: .25em;
+		}
+		.tel,.mail{
+			font-size: 1.2em;
+			&:before{
+				content: '';
+				padding: 0 .25em 0 0;
+				font-size: .8em;
+			}
+		}
+		.tel{
+			&:before{
+				content: 'TEL:';
+			}
+		}
+		.mail{
+			&:before{
+				content: 'e-mail:';
+			}
+		}
+		.domicile{
+			display: block;
+			br{
+				display: none;
+			}
+		}
+	}
+
+	#f_nav{
+		margin: 25px 0 0 0;
+		text-align: center;
+		font:{
+			weight: bold;
+			family: 'Noto Sans Japanese', sans-serif;
+		}
+		ul li{
+			display: inline;
+			zoom: 1;
+			display: inline-block;
+			position: relative;
+			margin: 0 40px;
+			padding: 0 0 0 1em;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 0;
+				height: 0;
+				margin-top: -4px;
+				border-left: solid 6px #fff;
+				border-top: solid 4px transparent;
+				border-bottom: solid 4px transparent;
+			}
+			a{
+				font-weight: 500;
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+	}
+	small{
+		display: block;
+		margin: 25px 0 0 0;
+		padding: 1em 0;
+		text-align: center;
+		background: darken( $blue, 15% );
+	}
+
+	@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+		h1{
+			display: block;
+			padding: 0 0 2em 0;
+		}
+		#address{
+			display: block;
+			padding: 0 0 0 1em;
+		}
+		#f_nav{
+			margin: 50px 0 0 0;
+			text-align: center;
+			ul li{
+				margin: 0 12px;
+				padding: 0 0 0 1em;
+				a{
+					font-size: 1.2em;
+				}
+			}
+		}
+		small{
+			margin: 50px 0 0 0;
+		}
+	} // tablet
+
+	@media all and (max-width: $phone - 1) {
+		h1{
+			display: block;
+			width: 60%;
+			padding: 0 0 1em 0;
+		}
+		#address{
+			display: block;
+			padding: 1em 0 0 0;
+			border:{
+				top: solid 1px #fff;
+				left: none;
+			}
+			font-size: .9em;
+			dd{
+				display: block;
+				padding: .25em;
+			}
+			dt{
+				display: none;
+			}
+			.domicile{
+				line-height: 1.7;
+				br{
+					display: block;
+				}
+			}
+		}
+		#f_nav{
+			margin: 2em 0 0 0;
+			ul li{
+				display: block;
+				margin: 0;
+				padding: .5em 0 .5em 1em;
+				text-align: left;
+			}
+		}
+		small{
+			font-size: .7em;
+		}
+	}// phone
+}
+
+
+/*-----------------------------------------------------
+	content　
+-----------------------------------------------------*/
+
+#content{
+	> section{
+		padding: 45px 10px;
+		&.bg{
+			background: $sky url(../images/pattern.png) center;
+		}
+		
+		h1{
+			position: relative;
+			margin: 0 0 1.5em 0;
+			padding: 0 0 0 1.4em;
+			font:{
+				size: 1.2em;
+				weight: bold;
+			}
+			letter-spacing: .2em;
+			color: #141414;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 1em;
+				height: 1em;
+				margin: -.5em 0 0 0;
+				background: url(../images/ico_sec_tit.png) no-repeat;
+				background-size: 100%;
+			}
+		}
+		
+		@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+			padding: 35px 0;
+		} // tablet
+
+		@media all and (max-width: $phone - 1){
+			padding: 4% 0;		
+			h1{
+				font-size: 1em;
+			}
+		} // phone
+		
+	}
+	.baloon{
+		position: relative;
+		z-index: 9;
+		margin: 0 auto 30px auto;
+		padding: 1em;
+		background: #ddd;
+		text-align: center;
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 100%;
+			width: 0;
+			height: 0;
+			margin: 0 0 0 -10px;
+			border:{
+				top: solid 15px #ddd;
+				left: solid 10px transparent;
+				right: solid 10px transparent;
+			}
+		}
+		@media all and (max-width: $pc - 1) and (min-width: $tablet){ 
+			font-size: .9em;
+		} // tablet
+
+		@media all and (max-width: $phone - 1){
+			font-size: .8em;
+		} // phone
+	}
+}

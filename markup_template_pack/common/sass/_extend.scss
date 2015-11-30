@@ -1,0 +1,44 @@
+
+// @extend
+%img_lq{
+	width: 100%;
+	height: auto;
+}
+%img_lq_height{
+	width: auto;
+	height: 100%;
+}
+%img_switch{
+	overflow: hidden;
+	white-space: nowrap;
+}
+%mouse_focus{
+	opacity: .7;
+}
+%transit1{
+	-webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+      -ms-transition: all .5s ease;
+       -o-transition: all .5s ease;
+          transition: all .5s ease;
+}
+%transit2{
+	-webkit-transition: all .25s ease;
+     -moz-transition: all .25s ease;
+      -ms-transition: all .25s ease;
+       -o-transition: all .25s ease;
+          transition: all .25s ease;
+}
+
+%box_shadow{
+	box-shadow:rgba(0, 0, 0, 0.180392) 0px 1px 3px 0px;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.180392) 0px 1px 3px 0px;
+	-moz-box-shadow:rgba(0, 0, 0, 0.180392) 0px 1px 3px 0px;
+}
+
+%box_shadow_inset{
+	box-shadow:rgba(0, 0, 0, 0.180392) 0px 2px 13px 2px inset;
+	-webkit-box-shadow:rgba(0, 0, 0, 0.180392) 0px 2px 13px 2px inset;
+	-moz-box-shadow:rgba(0, 0, 0, 0.180392) 0px 2px 13px 2px inset;
+}
+
