@@ -1,8 +1,8 @@
 cd /d %~dp0
 
-::sass --watch -t nested sass:css
+sass --watch -t nested sass:css
 ::sass --watch -t expented sass:css
-sass --watch -t expanded sass:css
+::sass --watch -t expanded sass:css
 ::sass --watch -t compressed sass:css
 
 ::sassフォルダをコンパクトでWatch、cssフォルダにコンパイルする
